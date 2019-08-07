@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BDC966CEF9EF490352504CDD3692B9C /* CombineObjectBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BEAF7A96C073DB0DA43D187921B7A6 /* CombineObjectBind.swift */; };
+		4E0C4606EFC5591964AA6459F43E7ADE /* Pods-CombineObjectCocoaPods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F57F568248B6AABFFD4094BFDBDD25B8 /* Pods-CombineObjectCocoaPods-dummy.m */; };
+		4F8D549CA16E4F47A062E00554CA0330 /* CombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EF16813C3E498431023CF395389D9 /* CombineView.swift */; };
+		648D9B6DF2C0B6A0A52CAEF5E3FD593E /* CombineBind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7A116F2322CF4D12DEBEEA61C360F /* CombineBind.swift */; };
+		70E3F09F0DCEC4085A25D1E192645D1E /* CombineObject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8302E97390ED90781871EBFF68615D0 /* CombineObject-dummy.m */; };
+		7987F4F8075F0F0E14232BD83244CF86 /* CombineObject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C21C03BD5373651751E86CBEA37BE5D3 /* CombineObject-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		91931CB60D4C79684D03BCA175DE96A7 /* CombineValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB9F73FC8D072AF967B8556EAF62093 /* CombineValue.swift */; };
+		9FD1809EAF22815F89C06E7025A12345 /* Pods-CombineObjectCocoaPods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29DC57F13DAECD270993AEF47C4C2525 /* Pods-CombineObjectCocoaPods-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C342C257CF472186CCFBFEC9DB4E1A2F /* CombineBlockContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9CB40AD0735EC69DD580B7C347D08E /* CombineBlockContent.swift */; };
+		FF7E365CA331310A195629696122FE9B /* CombineIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E03A4EEBEB44CC36668F199E24402B /* CombineIdentifier.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C0AD862478E37FB53929B85BBE0DA44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E075425A1B7E9718087B3831287642;
+			remoteInfo = CombineObject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C90E7C91808D505A81A957071ABB1E4 /* CombineObject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = CombineObject.modulemap; path = ../../Headers/Public/CombineObject/CombineObject.modulemap; sourceTree = "<group>"; };
+		0E579DB6F7E68F0B13F7F92989F86F61 /* libPods-CombineObjectCocoaPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-CombineObjectCocoaPods.a"; path = "libPods-CombineObjectCocoaPods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1066702EAD4BA88E165923C2BFB401D0 /* Pods-CombineObjectCocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CombineObjectCocoaPods.release.xcconfig"; sourceTree = "<group>"; };
+		29DC57F13DAECD270993AEF47C4C2525 /* Pods-CombineObjectCocoaPods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CombineObjectCocoaPods-umbrella.h"; sourceTree = "<group>"; };
+		343F63A3597881C8E4C32C6DB2E5B06D /* CombineObject.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = CombineObject.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3BB9F73FC8D072AF967B8556EAF62093 /* CombineValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineValue.swift; path = CombineObject/Sources/CombineObject/CombineValue.swift; sourceTree = "<group>"; };
+		41BEAF7A96C073DB0DA43D187921B7A6 /* CombineObjectBind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineObjectBind.swift; path = CombineObject/Sources/CombineObject/CombineObjectBind.swift; sourceTree = "<group>"; };
+		42AA764CBB6747230A60BEA2025E42DC /* Pods-CombineObjectCocoaPods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CombineObjectCocoaPods-resources.sh"; sourceTree = "<group>"; };
+		5064DBC1BEC1B02FAE4F072EDF5DAC5F /* Pods-CombineObjectCocoaPods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CombineObjectCocoaPods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		59ED833B04A1626B39B9E3224C2CA372 /* libCombineObject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCombineObject.a; path = libCombineObject.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		610F496086DD8923185D608D0BBBD1B0 /* Pods-CombineObjectCocoaPods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CombineObjectCocoaPods-acknowledgements.plist"; sourceTree = "<group>"; };
+		8193825C5563EEBA512AC3ABBEE93F38 /* CombineObject-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CombineObject-prefix.pch"; sourceTree = "<group>"; };
+		83A7A116F2322CF4D12DEBEEA61C360F /* CombineBind.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineBind.swift; path = CombineObject/Sources/CombineObject/CombineBind.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0E03A4EEBEB44CC36668F199E24402B /* CombineIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineIdentifier.swift; path = CombineObject/Sources/CombineObject/CombineIdentifier.swift; sourceTree = "<group>"; };
+		AC6B8DC770FB843D72C8F29E4AFABA8D /* Pods-CombineObjectCocoaPods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CombineObjectCocoaPods.modulemap"; sourceTree = "<group>"; };
+		AE9CB40AD0735EC69DD580B7C347D08E /* CombineBlockContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineBlockContent.swift; path = CombineObject/Sources/CombineObject/CombineBlockContent.swift; sourceTree = "<group>"; };
+		B21D7E719D632C4892C5B98BCD3257CE /* Pods-CombineObjectCocoaPods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CombineObjectCocoaPods-frameworks.sh"; sourceTree = "<group>"; };
+		BD1EF16813C3E498431023CF395389D9 /* CombineView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombineView.swift; path = CombineObject/Sources/CombineObject/CombineView.swift; sourceTree = "<group>"; };
+		C21C03BD5373651751E86CBEA37BE5D3 /* CombineObject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CombineObject-umbrella.h"; path = "../../Headers/Public/CombineObject/CombineObject-umbrella.h"; sourceTree = "<group>"; };
+		C8302E97390ED90781871EBFF68615D0 /* CombineObject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CombineObject-dummy.m"; sourceTree = "<group>"; };
+		CE1E4587E73579F62C572337A124E6F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DAAFD73CD43576ABB89D99FA9BDE0F14 /* CombineObject.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CombineObject.xcconfig; sourceTree = "<group>"; };
+		E56F0640780A832EA2FF0F6D6852A168 /* Pods-CombineObjectCocoaPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CombineObjectCocoaPods.debug.xcconfig"; sourceTree = "<group>"; };
+		F57F568248B6AABFFD4094BFDBDD25B8 /* Pods-CombineObjectCocoaPods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CombineObjectCocoaPods-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C03BA0F932068172949895C4DD69B44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBE997054442E2827B606BB443C0CB93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		007F0F24CBA3B20AEFF83F5C09AF019E /* Pods-CombineObjectCocoaPods */ = {
+			isa = PBXGroup;
+			children = (
+				AC6B8DC770FB843D72C8F29E4AFABA8D /* Pods-CombineObjectCocoaPods.modulemap */,
+				5064DBC1BEC1B02FAE4F072EDF5DAC5F /* Pods-CombineObjectCocoaPods-acknowledgements.markdown */,
+				610F496086DD8923185D608D0BBBD1B0 /* Pods-CombineObjectCocoaPods-acknowledgements.plist */,
+				F57F568248B6AABFFD4094BFDBDD25B8 /* Pods-CombineObjectCocoaPods-dummy.m */,
+				B21D7E719D632C4892C5B98BCD3257CE /* Pods-CombineObjectCocoaPods-frameworks.sh */,
+				42AA764CBB6747230A60BEA2025E42DC /* Pods-CombineObjectCocoaPods-resources.sh */,
+				29DC57F13DAECD270993AEF47C4C2525 /* Pods-CombineObjectCocoaPods-umbrella.h */,
+				E56F0640780A832EA2FF0F6D6852A168 /* Pods-CombineObjectCocoaPods.debug.xcconfig */,
+				1066702EAD4BA88E165923C2BFB401D0 /* Pods-CombineObjectCocoaPods.release.xcconfig */,
+			);
+			name = "Pods-CombineObjectCocoaPods";
+			path = "Target Support Files/Pods-CombineObjectCocoaPods";
+			sourceTree = "<group>";
+		};
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B6493C98A159C76C528AE3061D5E5A0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				007F0F24CBA3B20AEFF83F5C09AF019E /* Pods-CombineObjectCocoaPods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3D2E6629E433053827F32667F9E2B7A3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7691E47C10347AA74F815DC6C1ED1CA /* CombineObject */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		77F406216512F43CC6EA620ABC385A73 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				343F63A3597881C8E4C32C6DB2E5B06D /* CombineObject.podspec */,
+				CE1E4587E73579F62C572337A124E6F5 /* LICENSE */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3D2E6629E433053827F32667F9E2B7A3 /* Development Pods */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				D1242F78814FE09C2FFC5F17A9B47EF4 /* Products */,
+				2B6493C98A159C76C528AE3061D5E5A0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D1242F78814FE09C2FFC5F17A9B47EF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59ED833B04A1626B39B9E3224C2CA372 /* libCombineObject.a */,
+				0E579DB6F7E68F0B13F7F92989F86F61 /* libPods-CombineObjectCocoaPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1991D45B1339474DE8CA0E5F1BB7102 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C90E7C91808D505A81A957071ABB1E4 /* CombineObject.modulemap */,
+				DAAFD73CD43576ABB89D99FA9BDE0F14 /* CombineObject.xcconfig */,
+				C8302E97390ED90781871EBFF68615D0 /* CombineObject-dummy.m */,
+				8193825C5563EEBA512AC3ABBEE93F38 /* CombineObject-prefix.pch */,
+				C21C03BD5373651751E86CBEA37BE5D3 /* CombineObject-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "CombineObjectExample/CombineObjectCocoaPods/Pods/Target Support Files/CombineObject";
+			sourceTree = "<group>";
+		};
+		E7691E47C10347AA74F815DC6C1ED1CA /* CombineObject */ = {
+			isa = PBXGroup;
+			children = (
+				83A7A116F2322CF4D12DEBEEA61C360F /* CombineBind.swift */,
+				AE9CB40AD0735EC69DD580B7C347D08E /* CombineBlockContent.swift */,
+				A0E03A4EEBEB44CC36668F199E24402B /* CombineIdentifier.swift */,
+				41BEAF7A96C073DB0DA43D187921B7A6 /* CombineObjectBind.swift */,
+				3BB9F73FC8D072AF967B8556EAF62093 /* CombineValue.swift */,
+				BD1EF16813C3E498431023CF395389D9 /* CombineView.swift */,
+				77F406216512F43CC6EA620ABC385A73 /* Pod */,
+				E1991D45B1339474DE8CA0E5F1BB7102 /* Support Files */,
+			);
+			name = CombineObject;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1434C55319D83A72A382B47AF8B35200 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7987F4F8075F0F0E14232BD83244CF86 /* CombineObject-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		853ACE6E1EF5394A1D50F53274F6AE7F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FD1809EAF22815F89C06E7025A12345 /* Pods-CombineObjectCocoaPods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2E5580D0CEFB57F9CE2A570FD8CFC0E1 /* Pods-CombineObjectCocoaPods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61CD9A381AE6DD0517E6E0AFE306CB28 /* Build configuration list for PBXNativeTarget "Pods-CombineObjectCocoaPods" */;
+			buildPhases = (
+				BC33B233D84319B1C3C1A77CF6BF7BE3 /* Sources */,
+				CBE997054442E2827B606BB443C0CB93 /* Frameworks */,
+				853ACE6E1EF5394A1D50F53274F6AE7F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A79D6F34D2C51531034FB2C7B839912B /* PBXTargetDependency */,
+			);
+			name = "Pods-CombineObjectCocoaPods";
+			productName = "Pods-CombineObjectCocoaPods";
+			productReference = 0E579DB6F7E68F0B13F7F92989F86F61 /* libPods-CombineObjectCocoaPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D5E075425A1B7E9718087B3831287642 /* CombineObject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 379AEE1DF4F2C7847DECE078ADF27282 /* Build configuration list for PBXNativeTarget "CombineObject" */;
+			buildPhases = (
+				688A6FD53A9E4A72F6A456DB072908AA /* Sources */,
+				0C03BA0F932068172949895C4DD69B44 /* Frameworks */,
+				1434C55319D83A72A382B47AF8B35200 /* Headers */,
+				EBE915A026F95BD304B86D49DB4428AC /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CombineObject;
+			productName = CombineObject;
+			productReference = 59ED833B04A1626B39B9E3224C2CA372 /* libCombineObject.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D1242F78814FE09C2FFC5F17A9B47EF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5E075425A1B7E9718087B3831287642 /* CombineObject */,
+				2E5580D0CEFB57F9CE2A570FD8CFC0E1 /* Pods-CombineObjectCocoaPods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EBE915A026F95BD304B86D49DB4428AC /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/CombineObject/CombineObject.modulemap",
+				"${PODS_ROOT}/Headers/Public/CombineObject/CombineObject-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/CombineObject-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/CombineObject/CombineObject.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/CombineObject/CombineObject-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+			showEnvVarsInLog = 1;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		688A6FD53A9E4A72F6A456DB072908AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				648D9B6DF2C0B6A0A52CAEF5E3FD593E /* CombineBind.swift in Sources */,
+				C342C257CF472186CCFBFEC9DB4E1A2F /* CombineBlockContent.swift in Sources */,
+				FF7E365CA331310A195629696122FE9B /* CombineIdentifier.swift in Sources */,
+				70E3F09F0DCEC4085A25D1E192645D1E /* CombineObject-dummy.m in Sources */,
+				2BDC966CEF9EF490352504CDD3692B9C /* CombineObjectBind.swift in Sources */,
+				91931CB60D4C79684D03BCA175DE96A7 /* CombineValue.swift in Sources */,
+				4F8D549CA16E4F47A062E00554CA0330 /* CombineView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC33B233D84319B1C3C1A77CF6BF7BE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E0C4606EFC5591964AA6459F43E7ADE /* Pods-CombineObjectCocoaPods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A79D6F34D2C51531034FB2C7B839912B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CombineObject;
+			target = D5E075425A1B7E9718087B3831287642 /* CombineObject */;
+			targetProxy = 4C0AD862478E37FB53929B85BBE0DA44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		34C56DA34150B3978F41D3AC3ADB87C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAFD73CD43576ABB89D99FA9BDE0F14 /* CombineObject.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/CombineObject/CombineObject-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/CombineObject/CombineObject.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CombineObject;
+				PRODUCT_NAME = CombineObject;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7648A6DEE7667BAF4825C5170AC383B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56F0640780A832EA2FF0F6D6852A168 /* Pods-CombineObjectCocoaPods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CombineObjectCocoaPods/Pods-CombineObjectCocoaPods.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B4D255756B5EFFD8344A820DF7810A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAAFD73CD43576ABB89D99FA9BDE0F14 /* CombineObject.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/CombineObject/CombineObject-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/CombineObject/CombineObject.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = CombineObject;
+				PRODUCT_NAME = CombineObject;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6E40476B03B559023D4E1BD9FAC32F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1066702EAD4BA88E165923C2BFB401D0 /* Pods-CombineObjectCocoaPods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CombineObjectCocoaPods/Pods-CombineObjectCocoaPods.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		379AEE1DF4F2C7847DECE078ADF27282 /* Build configuration list for PBXNativeTarget "CombineObject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B4D255756B5EFFD8344A820DF7810A4 /* Debug */,
+				34C56DA34150B3978F41D3AC3ADB87C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61CD9A381AE6DD0517E6E0AFE306CB28 /* Build configuration list for PBXNativeTarget "Pods-CombineObjectCocoaPods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7648A6DEE7667BAF4825C5170AC383B2 /* Debug */,
+				B6E40476B03B559023D4E1BD9FAC32F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -9,25 +9,37 @@ import Foundation
 
 public class CombineBind {
     public typealias CustomSetCombineValueBlock = (CombineBlockContent) -> Void
-    public var content:CombineValue
-    public var views:[CombineView] = []
+    public typealias CustomCombineValueChangedBlock = (CombineValue) -> Void
+    private var content:CombineValue
+    private var views:[CombineWeakView] = []
     private var customSetCombineValueBlock:CustomSetCombineValueBlock?
+    private var customCombineValueChangedBlock:CustomCombineValueChangedBlock?
     public init<Value:CombineValue>(content:Value) {
         self.content = content
     }
-    public func appendCombineView<View:CombineView>(view:View) {
+    public func appendCombineView(view:CombineWeakView) {
         self.views.append(view)
     }
     
-    func setCombineValue<Value:CombineValue>(identifier:String = "", value:Value) {
+    public func setCombineValue<Value:CombineValue>(identifier:CombineIdentifier = CombineIdentifierEmpty.empty, value:Value) {
         self.content = value
+        self.customCombineValueChangedBlock?(value)
         for view in views {
             if let block = self.customSetCombineValueBlock {
-                let blockContent = CombineBlockContent(identifier: identifier, view: view, value: self.content)
+                let blockContent = CombineBlockContent(identifier: view.identifier, view: view.view, value: self.content)
                 block(blockContent)
             } else {
-                view.setCombineValue(identifier,self.content)
+                view.view.setCombineValue(view.identifier,self.content)
             }
         }
+    }
+    public func setCombineValueBlock(_ block:@escaping CustomSetCombineValueBlock) {
+        self.customSetCombineValueBlock = block
+    }
+    public func combineValueChangedBlock(_ block:@escaping CustomCombineValueChangedBlock) {
+        self.customCombineValueChangedBlock = block
+    }
+    public func contentValue() -> CombineValue {
+        return self.content
     }
 }

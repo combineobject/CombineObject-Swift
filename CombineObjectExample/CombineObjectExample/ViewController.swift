@@ -9,19 +9,12 @@
 import UIKit
 import CombineObject
 
-
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
+    @CombineObjectBind var name:String = ""
     
-    @CombineObjectBind
-    var text:String = "Hello Word"
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let label1 = UILabel()
-        let label2 = UILabel()
-        print(String.defaultCombineValue())
+        print(UIViewIdentifier.backgroundColor.identifier)
     }
-
-
 }
 

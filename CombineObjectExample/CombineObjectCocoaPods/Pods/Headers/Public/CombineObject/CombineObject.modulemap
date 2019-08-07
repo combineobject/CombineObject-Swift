@@ -1,0 +1,6 @@
+module CombineObject {
+  umbrella header "CombineObject-umbrella.h"
+
+  export *
+  module * { export * }
+}

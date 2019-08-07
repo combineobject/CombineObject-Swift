@@ -1,0 +1,6 @@
+module Pods_CombineObjectCocoaPods {
+  umbrella header "Pods-CombineObjectCocoaPods-umbrella.h"
+
+  export *
+  module * { export * }
+}
