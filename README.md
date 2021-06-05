@@ -1,166 +1,81 @@
+---
+typora-root-url: ./images
+---
+
 # CombineObject
 
-`CombineObject` 响应式框架 `Swift` 版本, `Value` 和 `View` 相互绑定。
-
-![image-20190806101237397](images/image-20190806101237397.png)
+`CombineObject` 响应式框架 `Swift` 版本
 
 ## 安装
 
-### CocoaPods
+⚠️目前正在改版2.0中
 
-```ruby
-pod 'CombineObject'
-```
+## 2.0功能
 
-### Carthage
+### 共用一个变量
 
-```ruby
-github "combineobject/CombineObject-Swift"
-```
+比如我们设置界面 两个视图默认为黑色
 
-### Package
+![image-20210605154346447](/image-20210605154346447.png)
 
-```ruby
-https://github.com/combineobject/CombineObject-Swift
-```
+我们通过下面代码进行控制
 
-## 怎么使用
+![image-20210605154515931](/image-20210605154515931.png)
 
-### Example1
+那么我们运行起来下面
 
-> 假如我们界面一个`UIView`和`UILabel`，我们想让`UIView`的背景颜色和`UILabel`的文本颜色一直保持统一。做法很多种，我们看看这个库可以做什么。
+![image-20210605154708129](/image-20210605154708129.png)
 
-- 声明一个变量做控制
+会自动根据变量全部变成了蓝色
 
-  ```swift
-  @CombineObjectBind var color = UIColor.gray
-  ```
-  
-- 绑定到试图
+如果我们改变了这个变量怎么样呢？
 
-  ```swift
-  self.displayLabel.bind(identifier: UILabelIdentifier.textColor, combineObject: self._color)
-  self.displayView.bind(combineObject: self._color)
-  ```
-  
-- 更新属性更新试图
+![image-20210605154759585](/image-20210605154759585.png)
 
-  ```swift
-  self.color = UIColor.red
-  ```
-  
-- 直接更新一个试图的值
+没错全部变成了红色 这就是变量共享
 
-``` swift
-self.displayView.updateBindValue(value: UIColor.blue)
-```
+![image-20210605154839112](/image-20210605154839112.png)
 
-![2019-08-06 10-22-35.2019-08-06 10_24_52](images/UIView.gif)
+## 变量传递
 
-### Example2
+如果我们不在一个页面想使用一个变量怎么办
 
-> 比如我们的属性没有我们试图绑定属性 我们想接受到属性变化时候更改值
+我们将当前的变量传递给下个界面
 
-```swift
-self._color.bind.combineValueChangedBlock {[weak self] (value) in
-    if let boardColor = value as? UIColor {
-        self?.displayLabel.layer.borderWidth = 1
-        self?.displayLabel.layer.borderColor = boardColor.cgColor
-    }
-}
-```
+![image-20210605161001140](/image-20210605161001140.png)
 
-![2019-08-06 10-39-10.2019-08-06 10_39_44](images/UIView1.gif)
+![image-20210605161018770](/image-20210605161018770.png)
 
-### Example3
+我们假设在下个界面更改值会发生什么？
 
-> 属性控制`UIProgressView`属性
+![image-20210605161105764](/image-20210605161105764.png)
 
-![2019-08-06 11-18-14.2019-08-06 11_18_55](images/UIProgress.gif)
+![image-20210605161123519](/image-20210605161123519.png)
 
-### Example4
+![image-20210605161136566](/image-20210605161136566.png)
 
-> 监听输入框的内容
+所绑定的视图全部变了色
 
-![2019-08-06 11-34-01.2019-08-06 11_34_27](images/UITextFiled.gif)
+## 模块化全局传值
 
-### Example5
+如果我们采用了模块化 还能做到变量共享吗？
 
-> 监听`UISlider`值
+我们将变量改造成下面
 
-![2019-08-06 11-45-34.2019-08-06 11_45_56](images/UISlider.gif)
+![image-20210605162037826](/image-20210605162037826.png)
 
-### Example6
+我们将我们模块化的页面也设置一样的`CombineGlobalKey`
 
-> 监听`UISwitch`的状态
+![image-20210605162112396](/image-20210605162112396.png)
 
-![2019-08-06 11-55-15.2019-08-06 11_55_32](images/UISwitch.gif)
+我们在模块化的页面更改一下颜色
 
-### Example6
+![image-20210605165315935](/image-20210605165315935.png)
 
-> 监听`UItextView`值变化
+![image-20210605165331053](/image-20210605165331053.png)
 
-![2019-08-06 12-07-29.2019-08-06 12_07_49](images/UItextView.gif)
+![image-20210605165344445](/image-20210605165344445.png)
 
-## 接口文档
+全部更改了对应的颜色
 
-### 目前支持的属性
-
-#### UIView
-
-- backgroundColor
-- userInteractionEnabled
-- frame
-- alpha
-- hidden
-
-#### UILabel
-
-- text
-- font
-- textColor
-- attributedText
-
-#### UISwitch
-
-- on
-
-#### UITextField
-
-- text
-- placeholder
-
-#### UISlider
-
-- value
-
-#### UIProgressView
-
-- progress
-
-#### UITextView
-
-- text
-
-### 扩展`UIView`的赋值支持属性方法
-
-```swift
-public func setUIViewCombineValue(_ identifier: CombineIdentifier, _ value: CombineValue?)
-```
-
-### 让其他的对象支持属性绑定
-
-> 实现`CombineView`协议
-
-```swift
-func setCombineValue(_ identifier:CombineIdentifier, _ value:CombineValue?)
-```
-
-### 自定义赋值
-
-> 实现属性`bine`值的代理方法``
-
-```swift
-self.color.bine.setCombineValueBlock = { content in
-}
-```
+以上就是2.0版本的预览功能

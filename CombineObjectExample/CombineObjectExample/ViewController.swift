@@ -10,11 +10,10 @@ import UIKit
 import CombineObject
 
 class ViewController: UITableViewController {
-    @CombineObjectBind var name:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(UIViewIdentifier.backgroundColor.identifier)
+        
     }
 }
 

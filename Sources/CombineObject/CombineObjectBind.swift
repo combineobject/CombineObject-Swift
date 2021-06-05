@@ -1,17 +1,19 @@
 @propertyWrapper
-public struct CombineObjectBind<Value:CombineValue> {
-    public var bind:CombineBind
-    private let defaultValue:Value
-    public init(initialValue value:Value) {
-        self.defaultValue = value
-        self.bind = CombineBind(content: value)
+public struct CombineObjectBind<V> {
+    
+    public var bind:CombineBind<V>
+    
+    private let globaleKey:CombineGlobalKey?
+    
+    public init(_ wrappedValue:V, _ globaleKey:CombineGlobalKey? = nil) {
+        self.globaleKey = globaleKey
+        self.bind = CombineBind(content: wrappedValue, globaleKey:globaleKey)
     }
-    public var wrappedValue:Value {
-        get { self.bind.contentValue() as? Value ?? self.defaultValue }
-        set { self.bind.setCombineValue(value: newValue) }
+    public var wrappedValue:V {
+        get { self.bind.content }
+        set { self.bind.content = newValue }
     }
-    public func wrappedValue(identifier:CombineIdentifier, wrappedValue:Value) {
-        self.bind.setCombineValue(identifier: identifier, value: wrappedValue)
-    }
+    
+    public var projectedValue:CombineBind<V> { self.bind }
 }
 

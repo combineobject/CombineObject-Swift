@@ -7,39 +7,73 @@
 
 import Foundation
 
-public class CombineBind {
-    public typealias CustomSetCombineValueBlock = (CombineBlockContent) -> Void
-    public typealias CustomCombineValueChangedBlock = (CombineValue) -> Void
-    private var content:CombineValue
-    private var views:[CombineWeakView] = []
-    private var customSetCombineValueBlock:CustomSetCombineValueBlock?
-    private var customCombineValueChangedBlock:CustomCombineValueChangedBlock?
-    public init<Value:CombineValue>(content:Value) {
-        self.content = content
-    }
-    public func appendCombineView(view:CombineWeakView) {
-        self.views.append(view)
-    }
+public class CombineBind<Value> {
+    public typealias MonitorValueChangedHandle<V> = (Value) -> Void
     
-    public func setCombineValue<Value:CombineValue>(identifier:CombineIdentifier = CombineIdentifierEmpty.empty, value:Value) {
-        self.content = value
-        self.customCombineValueChangedBlock?(value)
-        for view in views {
-            if let block = self.customSetCombineValueBlock {
-                let blockContent = CombineBlockContent(identifier: view.identifier, view: view.view, value: self.content)
-                block(blockContent)
-            } else {
-                view.view.setCombineValue(view.identifier,self.content)
-            }
+    public var content:Value {
+        get {
+            return _value
+        }
+        set {
+            updateValue(value: newValue, isNoUpdate: false)
         }
     }
-    public func setCombineValueBlock(_ block:@escaping CustomSetCombineValueBlock) {
-        self.customSetCombineValueBlock = block
+    
+    private var _value:Value
+    
+    let uuidString:String
+    
+    let globaleKey:CombineGlobalKey?
+    
+    private var monitorValueChangedHandles:[MonitorValueChangedHandle<Value>] = []
+        
+    public init(content:Value, globaleKey:CombineGlobalKey?) {
+        self.uuidString = "\(UUID().uuidString)_\(Date().timeIntervalSince1970)"
+        self.globaleKey = globaleKey
+        if let globaleKey = globaleKey {
+            self._value = CombineObject.share.value(globale: globaleKey) as? Value ?? content
+        } else {
+            self._value = content
+        }
+        self.addMonitor(globaleKey: globaleKey)
     }
-    public func combineValueChangedBlock(_ block:@escaping CustomCombineValueChangedBlock) {
-        self.customCombineValueChangedBlock = block
+    
+    private func addMonitor(globaleKey:CombineGlobalKey?) {
+        guard  let globaleKey = globaleKey else {
+            return
+        }
+        CombineObject.share.monitor(globale: globaleKey, uuidString: self.uuidString) {[weak self] value, uuidString in
+            guard let `self` = self else {
+                return
+            }
+            if let uuidString = uuidString, self.uuidString == uuidString {
+                return
+            }
+            guard let value = value as? Value else {
+                return
+            }
+            self.updateValue(value: value, isNoUpdate: true)
+        }
     }
-    public func contentValue() -> CombineValue {
-        return self.content
+    
+    private func updateValue(value:Value, isNoUpdate:Bool) {
+        _value = value
+        self.monitorValueChangedHandles.forEach { handle in
+            handle(value)
+        }
+        if let globaleKey = self.globaleKey , !isNoUpdate {
+            CombineObject.share.update(global: globaleKey, value: value, from: self.uuidString)
+        }
+    }
+
+    public func monitorValueChanged(_ block:@escaping MonitorValueChangedHandle<Value>) {
+        self.monitorValueChangedHandles.append(block)
+    }
+    
+    public func bind<View>(_ v:View, _ handle:@escaping (View, Value) -> Void) {
+        self.monitorValueChanged { value in
+            handle(v,value)
+        }
+        handle(v,self.content)
     }
 }
