@@ -10,7 +10,7 @@ import Foundation
 
 public class CombineObject {
     
-    public typealias GlobalUpdateHandle = (_ value:Any, _ uuidString:String?) -> Void
+    public typealias GlobalUpdateHandle = (_ value:Any?, _ uuidString:String?) -> Void
     
     public static let share = CombineObject()
     
@@ -18,11 +18,11 @@ public class CombineObject {
     
     private var globaleValueMap:[String:Any] = [:]
     
-    public func update(global key:CombineGlobalKey, value:Any) {
+    public func update(global key:CombineGlobalKey, value:Any?) {
         update(global: key, value: value, from: nil)
     }
     
-    func update(global key:CombineGlobalKey, value:Any, from uuidString:String?) {
+    func update(global key:CombineGlobalKey, value:Any?, from uuidString:String?) {
         self.globalUpdateHandles.forEach { _key,handles in
             guard _key == key.key else {
                 return

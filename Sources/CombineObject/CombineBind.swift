@@ -8,9 +8,9 @@
 import Foundation
 
 public class CombineBind<Value> {
-    public typealias MonitorValueChangedHandle<V> = (Value) -> Void
+    public typealias MonitorValueChangedHandle<V> = (Value?) -> Void
     
-    public var content:Value {
+    public var content:Value? {
         get {
             return _value
         }
@@ -19,7 +19,7 @@ public class CombineBind<Value> {
         }
     }
     
-    private var _value:Value
+    private var _value:Value?
     
     let uuidString:String
     
@@ -27,7 +27,7 @@ public class CombineBind<Value> {
     
     private var monitorValueChangedHandles:[MonitorValueChangedHandle<Value>] = []
         
-    public init(content:Value, globaleKey:CombineGlobalKey?) {
+    public init(content:Value?, globaleKey:CombineGlobalKey?) {
         self.uuidString = "\(UUID().uuidString)_\(Date().timeIntervalSince1970)"
         self.globaleKey = globaleKey
         if let globaleKey = globaleKey {
@@ -56,7 +56,7 @@ public class CombineBind<Value> {
         }
     }
     
-    private func updateValue(value:Value, isNoUpdate:Bool) {
+    private func updateValue(value:Value?, isNoUpdate:Bool) {
         _value = value
         self.monitorValueChangedHandles.forEach { handle in
             handle(value)
@@ -70,10 +70,14 @@ public class CombineBind<Value> {
         self.monitorValueChangedHandles.append(block)
     }
     
-    public func bind<View>(_ v:View, _ handle:@escaping (View, Value) -> Void) {
+    public func bind<View>(_ v:View, _ handle:@escaping (View, Value?) -> Void) {
         self.monitorValueChanged { value in
             handle(v,value)
         }
         handle(v,self.content)
+    }
+    
+    public func needUpdate() {
+        updateValue(value: self.content,  isNoUpdate: false)
     }
 }
