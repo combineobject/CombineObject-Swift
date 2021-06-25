@@ -6,10 +6,11 @@
 //
 
 import Foundation
-
+/// 绑定的对象
 public class CombineBind<Value> {
+    /// 值更新的回掉
     public typealias MonitorValueChangedHandle<V> = (Value?) -> Void
-    
+    /// 设置和获取值
     public var content:Value? {
         get {
             return _value
@@ -18,15 +19,19 @@ public class CombineBind<Value> {
             updateValue(value: newValue, isNoUpdate: false)
         }
     }
-    
+    /// 真正设置和访问的值
     private var _value:Value?
-    
+    /// 唯一的标识符
     let uuidString:String
-    
+    /// 关联的全局值的`CombineGlobalKey`
     let globaleKey:CombineGlobalKey?
-    
+    /// 监听值改变闭包的集合
     private var monitorValueChangedHandles:[MonitorValueChangedHandle<Value>] = []
-        
+    
+    /// 初始化一个绑定对象
+    /// - Parameters:
+    ///   - content: 绑定的值
+    ///   - globaleKey: 关联的全局值的`CombineGlobalKey`
     public init(content:Value?, globaleKey:CombineGlobalKey?) {
         self.uuidString = "\(UUID().uuidString)_\(Date().timeIntervalSince1970)"
         self.globaleKey = globaleKey
@@ -38,6 +43,8 @@ public class CombineBind<Value> {
         self.addMonitor(globaleKey: globaleKey)
     }
     
+    /// 添加一个监听值更新的回掉
+    /// - Parameter globaleKey: 关联的全局值的`CombineGlobalKey`
     private func addMonitor(globaleKey:CombineGlobalKey?) {
         guard  let globaleKey = globaleKey else {
             return
@@ -56,6 +63,10 @@ public class CombineBind<Value> {
         }
     }
     
+    /// 更新真正的值
+    /// - Parameters:
+    ///   - value: 更新的值
+    ///   - isNoUpdate: 是否需要通知更新全局值
     private func updateValue(value:Value?, isNoUpdate:Bool) {
         _value = value
         self.monitorValueChangedHandles.forEach { handle in
@@ -65,18 +76,24 @@ public class CombineBind<Value> {
             CombineObject.share.update(global: globaleKey, value: value, from: self.uuidString)
         }
     }
-
+    
+    /// 添加一个值更新回掉
+    /// - Parameter block: 值更新回掉
     public func monitorValueChanged(_ block:@escaping MonitorValueChangedHandle<Value>) {
         self.monitorValueChangedHandles.append(block)
     }
     
+    /// 绑定一个值用来做逻辑处理 当值发生改变时候
+    /// - Parameters:
+    ///   - v: 绑定的值
+    ///   - handle: 值更新的回掉
     public func bind<View>(_ v:View, _ handle:@escaping (View, Value?) -> Void) {
         self.monitorValueChanged { value in
             handle(v,value)
         }
         handle(v,self.content)
     }
-    
+    /// 需要通知更新 真正值不会更新
     public func needUpdate() {
         updateValue(value: self.content,  isNoUpdate: false)
     }
