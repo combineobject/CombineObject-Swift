@@ -85,7 +85,7 @@ public class CombineBind<Value> {
     
     /// 绑定一个值用来做逻辑处理 当值发生改变时候
     /// - Parameters:
-    ///   - v: 绑定的值
+    ///   - v: 绑定的到的视图
     ///   - handle: 值更新的回掉
     public func bind<View>(_ v:View, _ handle:@escaping (View, Value?) -> Void) {
         self.monitorValueChanged { value in
@@ -93,6 +93,17 @@ public class CombineBind<Value> {
         }
         handle(v,self.content)
     }
+    
+    
+    /// 绑定值做逻辑处理 绑定初始化或者更新都会回掉
+    /// - Parameter handle: 值更新回掉
+    public func bind(_ handle:@escaping ((Value?) -> Void)) {
+        self.monitorValueChanged { value in
+            handle(self.content)
+        }
+        handle(self.content)
+    }
+    
     /// 需要通知更新 真正值不会更新
     public func needUpdate() {
         updateValue(value: self.content,  isNoUpdate: false)
