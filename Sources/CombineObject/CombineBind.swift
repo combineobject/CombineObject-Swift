@@ -9,9 +9,9 @@ import Foundation
 /// 绑定的对象
 public class CombineBind<Value> {
     /// 值更新的回掉
-    public typealias MonitorValueChangedHandle<V> = (Value?) -> Void
+    public typealias MonitorValueChangedHandle<V> = (V) -> Void
     /// 设置和获取值
-    public var content:Value? {
+    public var content:Value {
         get {
             return _value
         }
@@ -20,7 +20,7 @@ public class CombineBind<Value> {
         }
     }
     /// 真正设置和访问的值
-    private var _value:Value?
+    private var _value:Value
     /// 唯一的标识符
     let uuidString:String
     /// 关联的全局值的`CombineGlobalKey`
@@ -32,7 +32,7 @@ public class CombineBind<Value> {
     /// - Parameters:
     ///   - content: 绑定的值
     ///   - globaleKey: 关联的全局值的`CombineGlobalKey`
-    public init(content:Value?, globaleKey:CombineGlobalKey?) {
+    public init(content:Value, globaleKey:CombineGlobalKey?) {
         self.uuidString = "\(UUID().uuidString)_\(Date().timeIntervalSince1970)"
         self.globaleKey = globaleKey
         if let globaleKey = globaleKey {
@@ -67,7 +67,7 @@ public class CombineBind<Value> {
     /// - Parameters:
     ///   - value: 更新的值
     ///   - isNoUpdate: 是否需要通知更新全局值
-    private func updateValue(value:Value?, isNoUpdate:Bool) {
+    private func updateValue(value:Value, isNoUpdate:Bool) {
         _value = value
         self.monitorValueChangedHandles.forEach { handle in
             handle(value)
@@ -87,7 +87,7 @@ public class CombineBind<Value> {
     /// - Parameters:
     ///   - v: 绑定的到的视图
     ///   - handle: 值更新的回掉
-    public func bind<View>(_ v:View, _ handle:@escaping (View, Value?) -> Void) {
+    public func bind<View>(_ v:View, _ handle:@escaping (View, Value) -> Void) {
         self.monitorValueChanged { value in
             handle(v,value)
         }
@@ -97,7 +97,7 @@ public class CombineBind<Value> {
     
     /// 绑定值做逻辑处理 绑定初始化或者更新都会回掉
     /// - Parameter handle: 值更新回掉
-    public func bind(_ handle:@escaping ((Value?) -> Void)) {
+    public func bind(_ handle:@escaping ((Value) -> Void)) {
         self.monitorValueChanged { value in
             handle(self.content)
         }
